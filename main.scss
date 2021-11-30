@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&family=Outfit:wght@700&family=Roboto:wght@700&display=swap');
 
 $breakpoint_tablet: 1023px;
 $breakpoint_mobile: 767px;
@@ -7,99 +7,164 @@ $banner_height_desktop: 220px;
 $banner_height_tablet: 160px;
 $banner_height_mobile: 100px;
 
+$title_color: #0B1C2B;
+$black_1: #303030;
+$black_2: #747474;
+
 @mixin tablet {
-  @media screen and (max-width: $breakpoint_tablet) {
-    @content;
-  }
+    @media screen and (max-width: $breakpoint_tablet) {
+        @content;
+    }
 }
 
 @mixin mobile {
-  @media screen and (max-width: $breakpoint_mobile) {
-    @content;
-  }
+    @media screen and (max-width: $breakpoint_mobile) {
+        @content;
+    }
 }
 
 body {
-  margin: 0;
+    margin: 0;
 }
 
 #banner {
-  transition: 1s all;
-  height: $banner_height_desktop;
+    transition: 1s all;
+    height: $banner_height_desktop;
 
-  @include tablet {
-    height: $banner_height_tablet;
-  }
+    @include tablet {
+        height: $banner_height_tablet;
+    }
 
-  @include mobile {
-    height: $banner_height_mobile;
-  }
+    @include mobile {
+        height: $banner_height_mobile;
+    }
+
+    .mask-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        transition: 1s all;
+        background-image: url("./banner-2560.png");
+
+        @media screen and(max-width: 1920px) {
+            background-image: url("./banner-1920.png");
+        }
+        @include tablet {
+            background-image: url("./banner-1024.png");
+        }
+        @include mobile {
+            background-image: url("./banner-768.png");
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 1s all;
+        height: $banner_height_desktop;
+
+        @include tablet {
+            height: $banner_height_tablet;
+        }
+
+        @include mobile {
+            height: $banner_height_mobile;
+        }
+
+        text {
+            mix-blend-mode: difference;
+            font-family: 'Outfit', sans-serif;
+            font-size: 200px;
+            font-weight: bold;
+            transition: 1s font-size;
+
+            @include tablet {
+                font-size: 150px;
+            }
+
+            @include mobile {
+                font-size: 80px;
+            }
+        }
+    }
+
+    .black-rect {
+        transition: 1s all;
+        height: 137px;
+
+        @include tablet {
+            height: 101px;
+        }
+
+        @include mobile {
+            height: 60px;
+        }
+    }
+
+    .mask-rect {
+        fill: white;
+        mask: url(#banner-mask);
+    }
 }
 
-#banner-image {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  transition: 1s all;
-  background-image: url("./banner-2560.png");
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    max-width: 1024px;
 
-  @media screen and(max-width: 1920px) {
-    background-image: url("./banner-1920.png");
-  }
-  @include tablet {
-    background-image: url("./banner-1024.png");
-  }
-  @include mobile {
-    background-image: url("./banner-768.png");
-  }
+    .title {
+        display: block;
+        box-sizing: border-box;
+        width: 300px;
+        height: 76px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 56px;
+        text-align: center;
+        color: $title_color;
+        border-bottom: 4px solid $title_color;
+        margin-bottom: 30px;
+    }
 }
 
-#banner svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 1s all;
-  height: $banner_height_desktop;
+#about-me {
+    .intro-box {
+        width: 100%;
 
-  @include tablet {
-    height: $banner_height_tablet;
-  }
+        .name {
+            float: left;
 
-  @include mobile {
-    height: $banner_height_mobile;
-  }
-}
+            h1, h2 {
+                display: inline;
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight: bold;
+            }
 
-#banner-rect1 {
-  transition: 1s all;
-  height: 137px;
+            h1 {
+                font-size: 40px;
+                color: $black_1;
+            }
 
-  @include tablet {
-    height: 101px;
-  }
+            h2 {
+                font-size: 24px;
+                color: $black_2;
+                margin-left: 6px;
+            }
+        }
 
-  @include mobile {
-    height: 60px;
-  }
-}
+        .description {
+            float: right;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            color: $black_2;
+        }
+    }
 
-#banner svg text {
-  mix-blend-mode: difference;
-  font-family: 'Outfit', sans-serif;
-  font-size: 200px;
-  font-weight: bold;
-  transition: 1s font-size;
-
-  @include tablet {
-    font-size: 150px;
-  }
-
-  @include mobile {
-    font-size: 80px;
-  }
-}
-
-#banner-mask-rect {
-  fill: white;
-  mask: url(#banner-mask);
+    .info {
+        margin-top: 100px;
+    }
 }
