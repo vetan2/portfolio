@@ -3,6 +3,10 @@ body {
   margin: 0;
 }
 
+* {
+  transition: 1s all;
+}
+
 #banner {
   transition: 1s all;
   height: 220px;
@@ -98,7 +102,13 @@ section {
   align-items: center;
   flex-wrap: wrap;
   margin: 60px auto;
-  max-width: 1024px;
+  max-width: 900px;
+}
+@media screen and (max-width: 1023px) {
+  section {
+    margin: 20px auto;
+    max-width: 700px;
+  }
 }
 section .title {
   display: block;
@@ -112,36 +122,181 @@ section .title {
   border-bottom: 4px solid #0B1C2B;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 1023px) {
+  section .title {
+    width: 200px;
+    height: 56px;
+    font-size: 40px;
+    border-bottom: 3px solid #0B1C2B;
+  }
+}
+@media screen and (max-width: 767px) {
+  section .title {
+    width: 120px;
+    height: 32px;
+    font-size: 24px;
+    border-bottom: 2px solid #0B1C2B;
+    margin-bottom: 20px;
+  }
+}
 
+#about-me {
+  font-family: "Noto Sans KR", sans-serif;
+}
 #about-me .intro-box {
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  #about-me .intro-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 #about-me .intro-box .name {
   float: left;
 }
+@media screen and (max-width: 767px) {
+  #about-me .intro-box .name {
+    float: none;
+  }
+}
 #about-me .intro-box .name h1, #about-me .intro-box .name h2 {
   display: inline;
-  font-family: "Noto Sans KR", sans-serif;
   font-weight: bold;
 }
 #about-me .intro-box .name h1 {
   font-size: 40px;
   color: #303030;
 }
+@media screen and (max-width: 1023px) {
+  #about-me .intro-box .name h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .intro-box .name h1 {
+    font-size: 22px;
+  }
+}
 #about-me .intro-box .name h2 {
   font-size: 24px;
   color: #747474;
   margin-left: 6px;
 }
+@media screen and (max-width: 1023px) {
+  #about-me .intro-box .name h2 {
+    font-size: 18px;
+    margin-left: 2px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .intro-box .name h2 {
+    font-size: 16px;
+    margin-left: 0;
+  }
+}
 #about-me .intro-box .description {
   float: right;
-  font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
   font-size: 20px;
   color: #747474;
 }
-#about-me .info {
+@media screen and (max-width: 1023px) {
+  #about-me .intro-box .description {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .intro-box .description {
+    font-size: 14px;
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+#about-me .info-box {
   margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+@media screen and (max-width: 1023px) {
+  #about-me .info-box {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .info-box {
+    margin-top: 40px;
+  }
+}
+#about-me .info-box .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+@media screen and (max-width: 1023px) {
+  #about-me .info-box .info {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .info-box .info {
+    width: 100px;
+  }
+}
+#about-me .info-box .info .icon {
+  width: 50px;
+  height: 50px;
+}
+@media screen and (max-width: 1023px) {
+  #about-me .info-box .info .icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .info-box .info .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+#about-me .info-box .info .sort {
+  font-weight: bold;
+  font-size: 28px;
+  color: #303030;
+}
+@media screen and (max-width: 1023px) {
+  #about-me .info-box .info .sort {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .info-box .info .sort {
+    font-size: 18px;
+  }
+}
+#about-me .info-box .info .content {
+  font-weight: 500;
+  font-size: 20px;
+  color: #747474;
+  margin-top: 6px;
+  text-align: center;
+  word-break: keep-all;
+}
+@media screen and (max-width: 1023px) {
+  #about-me .info-box .info .content {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-me .info-box .info .content {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -27,6 +27,10 @@ body {
     margin: 0;
 }
 
+* {
+    transition: 1s all;
+}
+
 #banner {
     transition: 1s all;
     height: $banner_height_desktop;
@@ -114,7 +118,12 @@ section {
     align-items: center;
     flex-wrap: wrap;
     margin: 60px auto;
-    max-width: 1024px;
+    max-width: 900px;
+
+    @include tablet() {
+        margin: 20px auto;
+        max-width: 700px;
+    }
 
     .title {
         display: block;
@@ -127,44 +136,172 @@ section {
         color: $title_color;
         border-bottom: 4px solid $title_color;
         margin-bottom: 30px;
+
+        @include tablet() {
+            width: 200px;
+            height: 56px;
+            font-size: 40px;
+            border-bottom: 3px solid $title_color;
+        }
+
+        @include mobile() {
+            width: 120px;
+            height: 32px;
+            font-size: 24px;
+            border-bottom: 2px solid $title_color;
+            margin-bottom: 20px;
+        }
     }
 }
 
 #about-me {
+    font-family: 'Noto Sans KR', sans-serif;
+
     .intro-box {
         width: 100%;
+
+        @include mobile() {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
         .name {
             float: left;
 
+            @include mobile() {
+                float: none;
+            }
+
             h1, h2 {
                 display: inline;
-                font-family: 'Noto Sans KR', sans-serif;
                 font-weight: bold;
             }
 
             h1 {
                 font-size: 40px;
                 color: $black_1;
+
+                @include tablet() {
+                    font-size: 28px;
+                }
+
+                @include mobile() {
+                    font-size: 22px;
+                }
             }
 
             h2 {
                 font-size: 24px;
                 color: $black_2;
                 margin-left: 6px;
+
+                @include tablet() {
+                    font-size: 18px;
+                    margin-left: 2px;
+                }
+
+                @include mobile() {
+                    font-size: 16px;
+                    margin-left: 0;
+                }
             }
         }
 
         .description {
             float: right;
-            font-family: 'Noto Sans KR', sans-serif;
             font-weight: 500;
             font-size: 20px;
             color: $black_2;
+
+            @include tablet() {
+                font-size: 16px;
+            }
+
+            @include mobile() {
+                font-size: 14px;
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
         }
     }
 
-    .info {
+    .info-box {
         margin-top: 100px;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        @include tablet() {
+            margin-top: 60px;
+        }
+
+        @include mobile() {
+            margin-top: 40px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 180px;
+
+            @include tablet() {
+                width: 150px;
+            }
+
+            @include mobile() {
+                width: 100px;
+            }
+
+            .icon {
+                width: 50px;
+                height: 50px;
+
+                @include tablet() {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                @include mobile() {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .sort {
+                font-weight: bold;
+                font-size: 28px;
+                color: $black_1;
+
+                @include tablet() {
+                    font-size: 22px;
+                }
+
+                @include mobile() {
+                    font-size: 18px;
+                }
+            }
+
+            .content {
+                font-weight: 500;
+                font-size: 20px;
+                color: $black_2;
+                margin-top: 6px;
+                text-align: center;
+                word-break: keep-all;
+
+                @include tablet() {
+                    font-size: 16px;
+                    margin: 0;
+                }
+
+                @include mobile() {
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }
